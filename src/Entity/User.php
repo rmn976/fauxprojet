@@ -121,11 +121,18 @@ class User implements UserInterface
         // $this->plainPassword = null;
     }
 
+    /**
+     * @return \DateTimeInterface|null
+     */
     public function getBirthdate(): ?\DateTimeInterface
     {
         return $this->birthdate;
     }
 
+    /**
+     * @param \DateTimeInterface|null $birthdate
+     * @return $this
+     */
     public function setBirthdate(?\DateTimeInterface $birthdate): self
     {
         $this->birthdate = $birthdate;
