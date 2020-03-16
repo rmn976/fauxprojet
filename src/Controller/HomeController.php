@@ -27,4 +27,26 @@ class HomeController extends AbstractController
             'user' => $user,
         ]);
     }
+
+    /**
+     * @Route("/admin", name="admin")
+     */
+    public function adminTest()
+    {
+        $user = $this->getUser()->getUsername();
+        return $this->render('home/admin.html.twig', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
+     * @Route("/logout", name="logout")
+     */
+    public function logoutTest()
+    {
+        $user = $this->getUser()->getUsername();
+        return $this->render('home/logout.html.twig', [
+            'user' => $user,
+        ]);
+    }
 }

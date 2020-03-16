@@ -72,7 +72,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('Le nom d\'utilisateur '.$credentials['username'].' est inconu.');
+            throw new CustomUserMessageAuthenticationException('Le nom d\'utilisateur '.$credentials['username'].' est inconnu.');
         }
 
         return $user;
@@ -83,7 +83,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
         $check = $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
 
         if ($check != true) {
-            throw new CustomUserMessageAuthenticationException('Le mot de passe est incorect.');
+            throw new CustomUserMessageAuthenticationException('Le mot de passe est incorrect.');
         }
 
         return $check;
